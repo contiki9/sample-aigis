@@ -6,14 +6,4 @@ gulp.task("aigis", function() {
         .pipe(aigis());
 });
 
-gulp.task('default', function(callback) {
-
-    return runSequence(
-        'clean',
-        ['jade', 'sass', 'output'],
-        'replaceHostName',
-        'copy-dist',
-        'watch',
-        callback
-    );
-});
+gulp.task("default", ["aigis"]);
